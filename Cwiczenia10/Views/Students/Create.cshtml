@@ -1,0 +1,44 @@
+﻿@model Cwiczenia10.Models.CreateStudentViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div>
+    <h1>Create</h1>
+    <h4>Student</h4>
+    <hr />
+</div>
+<div>
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div >
+                <label asp-for="Student.FirstName"></label>
+                <input asp-for="Student.FirstName" />
+                <span asp-validation-for="Student.FirstName" class="red-text"></span>
+            </div>
+            <div >
+                <label asp-for="Student.LastName"></label>
+                <input asp-for="Student.LastName" />
+                <span asp-validation-for="Student.LastName" class="red-text"></span>
+            </div>
+            <div >
+                <label asp-for="Student.Studies"></label>
+                <select asp-for="Student.Studies" asp-items="Model.AllStudies" >
+                    <option value="">None</option>
+                </select>
+                <span asp-validation-for="Student.Studies" class="red-text"></span>
+            </div>
+            <div>
+                <input type="submit" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
